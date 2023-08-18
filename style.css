@@ -508,3 +508,146 @@ body {
     background-size: contain;
     top: 4px;
 }
+
+
+/* ----------------------- Adaptive for Tablet < 1050px */
+
+@media (max-width: 1051px) {
+    body {
+        padding: 0  20px;
+    }
+
+    .header__container {
+        margin: 20px 10px 20px 10px;
+    }
+
+    .header__menu_item:last-child {
+        margin: 0;
+    }
+
+    .page_title {
+        margin: 0 0 10px 20px;
+    }
+
+    .container {
+        margin: 0 0 30px;
+    }
+
+
+    /* --------------------- FIRST PAGE */
+
+
+    .first_page__container {
+        grid-template-columns: minmax(340px, 1fr) repeat(2, 170px);
+        grid-template-rows: 315px minmax(185px, auto);
+    }
+
+
+    /* --------------------- STYLES PAGE */
+
+
+    .styles_page__container {
+        grid-template-columns: minmax(170px, 1fr) repeat(2, 170px) minmax(170px, 1fr);
+        grid-template-rows: auto repeat(3, minmax(185px, auto));
+    }
+
+    .styles_page__container.active {
+        grid-template-rows: auto repeat(4, minmax(185px, auto));
+    }
+
+    .styles_page__title {
+        grid-column: span 4;
+    }
+    
+    /* modern */
+    .styles_page__section:nth-child(2) {
+        grid-column: span 4;
+    }
+    
+    /* industrial */
+    .styles_page__section:nth-child(3) {
+        grid-column: span 3;
+        grid-row: 3/4;
+    }
+
+    .styles_page__section:nth-child(3).active {
+        grid-column: span 3;
+        grid-row: 3/5;
+    }
+
+    /* more */
+    .styles_page__section:nth-child(4) {
+        grid-column: span 1;
+        grid-row: 3/4;
+    }
+    
+    /* retro */
+    .styles_page__section:nth-child(5) {
+        grid-row: 4;
+        grid-column: span 2;
+    }
+
+    .styles_page__section:nth-child(3).active ~ .styles_page__section:nth-child(5) {
+        grid-row: 5;
+    }
+
+    /* futuristic */
+    .styles_page__section:nth-child(6) {
+        grid-row: 4;
+        grid-column: span 2;
+    }
+
+    .styles_page__section:nth-child(3).active ~ .styles_page__section:nth-child(6) {
+        grid-row: 5;
+    }
+
+
+    /* --------------------- EXPLORE PAGE */
+
+
+    .explore_page__section .section__text {
+        width: 100%;
+    }
+
+
+    /* --------------------- PLAN PAGE */
+
+
+    .plan_page__container {
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+
+    .plan_page__section.section {
+        padding: 25px 20px;
+    }
+
+    .section__li {
+        width: 80%;
+    }
+
+
+    /* --------------------- ORDER PAGE */
+
+
+    .order_page__container {
+        grid-template-columns: minmax(170px, 1fr) repeat(2, 170px) minmax(170px, 1fr);
+    }
+
+    .order_page__title {
+        grid-column: span 4;
+    }
+
+    .order_page__form {
+        grid-column: span 2;
+    }
+
+        
+    .order_page__section:nth-child(3) {
+        grid-column: span 2;
+    }
+    
+    .order_page__section:nth-child(4) {
+        grid-column: 2/4;
+    }
+
+}
