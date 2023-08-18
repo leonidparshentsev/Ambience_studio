@@ -8,9 +8,9 @@
 </head>
 <body>
 <header>
-    <div class="header__container">
-        <div class="header__logo title">AMBIANCE STUDIO</div>
-        <ul class="header__menu">
+    <div id="header" class="header__container">
+        <div class="header__logo title"><p>AMBIANCE STUDIO</p></div>
+        <ul id="menu" class="header__menu">
             <li class="header__menu_item text">
                 <a href="#styles_page">styles</a>
             </li>
@@ -24,6 +24,10 @@
                 <a href="#order_page">contact us</a>
             </li>
         </ul>
+        <div class="header__burger_container">
+            <a href="#menu" class="header__burger"><div></div></a>
+            <a href="#header" class="header__burger_close"></a>
+        </div>
     </div>
 </header>
 <main>
@@ -197,9 +201,9 @@
         </div>
         <div class="order_page__section section section_grey">
             <ul class="section__ul text">
-                <li class="section__li facebook"><a href="#">facebook</a></li>
-                <li class="section__li instagram"><a href="#">instagram</a></li>
-                <li class="section__li youtube"><a href="#">youtube</a></li>
+                <a href="#"><li class="section__li facebook">facebook</li></a>
+                <a href="#"><li class="section__li instagram">instagram</li></a>
+                <a href="#"><li class="section__li youtube">youtube</li></a>
             </ul>
         </div>
     </section>

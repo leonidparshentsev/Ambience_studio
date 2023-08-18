@@ -30,6 +30,7 @@
     --light-green: #D7FB72;
     --white: #F6F6F6;
     --transparent:  #9a9a9a;
+    --background: #fefbee;
 }
 
 a {
@@ -38,7 +39,7 @@ a {
 
 body {
     padding: 0  50px;
-    background-color: #fefbee;
+    background-color: var(--background);
     max-width: 1200px;
     margin: auto;
 }
@@ -79,6 +80,8 @@ body {
     margin: 0 10px 0 0;
     flex: 1 0;
     font-size: 22px;
+    position: relative;
+    top: 2px;
 }
 .header__menu {
     display: flex;
@@ -90,6 +93,10 @@ body {
     align-items: center;
     margin: 0 40px 0 0;
     padding: 6px 0 8px;
+}
+.header__burger_container,
+.header__burger_menu {
+    display: none;
 }
 
 .button {
@@ -270,6 +277,7 @@ body {
     border-radius: 40px;
     flex: 0 0 300px;
     margin: 0 10px 10px 0;
+    object-fit: cover;
 }
 
 /* ------------------STYLES */
@@ -324,6 +332,7 @@ body {
     border-radius: 40px;
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 
@@ -360,6 +369,7 @@ body {
 .section__header .section__text {
     margin: 0 0 15px;
     width: auto;
+    text-align: end;
 }
 
 .section__ul {
@@ -498,13 +508,14 @@ body {
 }
 
 .facebook::before {
-    background: url(img/32px/facebook-white.png);
+    background: url(img/32px/facebook.png);
 }
 .instagram::before {
-    background: url(img/32px/instagram-white.png);
+    background: url(img/32px/instagram.png);
 }
 .order_page__section .section__li.youtube::before {
-    background: url(img/32px/youtube-wh.png);
+    /* background: url(img/32px/youtube-wh.png); */
+    background: url(img/32px/youtube.png);
     background-size: contain;
     top: 4px;
 }
@@ -580,6 +591,11 @@ body {
         grid-column: span 1;
         grid-row: 3/4;
     }
+
+    .styles_page__section:nth-child(4) .section__text {
+        width: 60%;
+    }
+    
     
     /* retro */
     .styles_page__section:nth-child(5) {
@@ -604,6 +620,9 @@ body {
 
     /* --------------------- EXPLORE PAGE */
 
+    .explore_page__container {
+        grid-template-rows: auto 300px 240px 60px 240px;
+    }
 
     .explore_page__section .section__text {
         width: 100%;
@@ -648,6 +667,315 @@ body {
     
     .order_page__section:nth-child(4) {
         grid-column: 2/4;
+    }
+
+}
+
+/* ----------------------- Adaptive for Mobile < 768px */
+
+@media (max-width: 769px) {
+
+    body {
+        max-width: 480px;
+    }
+
+    /* ------------------ BURGER MENU */
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__menu:target {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        top: 0;
+        left: 0;
+        background-color: var(--background);
+    }
+
+    .header__menu_item {
+        margin: 0 0 20px 0;
+        font-size: 28px;
+    }
+
+    .header__burger_container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        width: 25px;
+        z-index: 1;
+    }
+
+    .header__burger_container:hover,
+    .header__burger_container:focus {
+        cursor: pointer;
+    }
+
+    .header__burger_container:active .header__burger div,
+    .header__burger_container:active .header__burger div::before, 
+    .header__burger_container:active .header__burger div::after {
+        width: 20px;
+    }
+
+    .header__burger,
+    .header__burger_close {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .header__burger div {
+        position: relative;
+        width: 25px;
+        height: 2px;
+        background-color: var(--black);
+        border-radius: 1px;
+    }
+
+    .header__burger div::before, 
+    .header__burger div::after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: var(--black);
+        border-radius: 1px;
+    }
+
+    .header__burger div::before {
+        top: -7px;
+    }
+
+    .header__burger div::after {
+        top: 7px;
+    }
+
+    .header__burger_close {
+        display: none;
+    }
+
+    .header__menu:target ~ .header__burger_container .header__burger {
+        display: none;
+    }  
+
+    .header__menu:target ~ .header__burger_container .header__burger_close {
+        display: block;
+        background: url(img/32px/down-arrow-lightgray.png);
+        background-size: contain;
+    } 
+
+
+    /* ------------------  */
+
+
+    .section__more {
+        width: 32px;
+        height: 32px;
+    }
+
+    .page_title {
+        /* font-size: 38px;
+        line-height: 40px; */
+        font-size: 34px;
+        line-height: 36px;
+        width: 100%;
+        margin: 0 0 10px 0;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    /* ------------------ FIRST PAGE */
+
+
+    .first_page__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .first_page__section {
+        width: 100%;
+    }
+
+    .first_page__section:nth-child(4),
+    .first_page__section:nth-child(5) {
+        margin: auto;
+        width: 48%;
+    }
+
+
+    /* ------------------ STYLES PAGE */
+    
+    .styles_page__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .styles_page__section {
+        width: 100%;
+    }
+
+    .styles_page__section:nth-child(4) {
+        order: 1;
+        /* width: 100%; */
+    }
+
+
+    /* ------------------ EXPLORE PAGE */  
+    
+
+    .explore_page__section:nth-child(4) {
+        order: 2;
+    }
+
+    .explore_page__img:nth-child(5) {
+        order: 1;
+    }
+    
+    .explore_page__img:nth-child(n + 6), 
+    .explore_page__section:nth-child(n + 6) {
+        order: 3;
+    }
+
+    .explore_page__section {
+        margin: -40px 0 0 0;
+    }
+
+
+    /* ------------------ PLAN PAGE */
+
+
+    .plan_page__section.section {
+        padding: 30px 45px;
+    }
+
+    .plan_page__section .section__li {
+        width: 60%;
+    }
+
+
+    /* ------------------ PLAN PAGE */
+
+    
+    .order_page__container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .order_page__form,
+    .order_page__section:nth-child(3) {
+        width: 100%;
+    }
+    
+    .order_page__section:nth-child(4),
+    .order_page__section:nth-child(5) {
+        margin: auto;
+        width: 48%;
+    }
+
+    .order_page__section:has(.section__more) {
+        padding: 40px 25px;
+    }
+}
+
+@media (max-width: 479.99px) {
+
+    .page_title {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+
+    .hidden_img {
+        max-width: 265px;
+    }
+
+    .form__select {
+        margin: 0 0 40px 0;
+    }
+
+    .order_page__section:nth-child(4),
+    .order_page__section:nth-child(5) {
+        margin: 0 auto;
+        padding: 30px 20px 30px;
+    }
+
+    .order_page__section:nth-child(4) .section__text {
+        margin: 0 0 5px 0;
+    }
+
+    .order_page__section .section__more {
+        right: 20px;
+        bottom: 20px;
+    }
+
+}
+
+@media (max-width: 370px) {
+
+    body {
+        min-width: 320px;
+    }
+
+    .first_page__section.section {
+        padding: 35px 20px;
+    }
+
+    .styles_page__section .hidden_img {
+        max-width: 210px;
+    }
+
+    .styles_page__section .section__plus,
+    .styles_page__section .section__minus {
+        top: auto;
+        bottom: 16px;
+        right: 16px;
+        /* left: 50%; */
+        /* margin: auto; */
+    }
+
+    .styles_page__section .section__text,
+    .order_page__section:nth-child(4) .section__text {
+        width: 100%;
+        
+    }
+
+    .order_page__section:nth-child(4),
+    .order_page__section:nth-child(5) {
+        padding: 20px 15px 20px;
+    }
+
+    .order_page__section .section__more {
+        width: 20px;
+        height: 20px;
+    }
+
+    .plan_page__section.section {
+        padding: 30px;
+    }
+
+    .order_page__form,
+    .order_page__section:nth-child(3) {
+        padding: 35px 20px;
+    }
+
+    .order_page__section:nth-child(4) {
+        padding: 20px 15px;
     }
 
 }
