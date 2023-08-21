@@ -3,27 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambience studio</title>
+    <title>Ambiance studio</title>
+    <meta name="description" content="Ambiance studio develop design not only for your space, but for your life">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/icon-96.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
     <div id="header" class="header__container">
-        <div class="header__logo title"><p>AMBIANCE STUDIO</p></div>
-        <ul id="menu" class="header__menu">
-            <a href="#styles_page">
-                <li class="header__menu_item text">styles</li>
-            </a>
-            <a href="#explore_page">
-                <li class="header__menu_item text">portfolio</li>
-            </a>
-            <a href="#plan_page">
-                <li class="header__menu_item text">plans</li>
-            </a>
-            <a href="#order_page">
-                <li class="header__menu_item text button button_grey">contact us</li>
-            </a>
-        </ul>
+        <div class="header__logo title">AMBIANCE STUDIO</div>
+        <nav>
+            <ul id="menu" class="header__menu">
+                <li class="header__menu_item text">
+                    <a href="#styles_page">styles</a>
+                </li>
+                <li class="header__menu_item text">
+                    <a href="#explore_page">portfolio</a>
+                </li>
+                <li class="header__menu_item text">
+                    <a href="#plan_page">plans</a>
+                </li>
+                <li class="header__menu_item">
+                    <a href="#order_page" class="text  button button_grey">contact us</a>
+                </li>
+            </ul>
+        </nav>
         <div class="header__burger_container">
             <a href="#menu" class="header__burger"><div></div></a>
             <a href="#header" class="header__burger_close"></a>
@@ -32,20 +38,15 @@
 </header>
 <main>
     <section id="first_page" class="first_page__container container">
-        <h1 class="first_page__title page_title">BRINGING VISION<br> TO LIFE</h1>
+        <h1 class="first_page__title page_title">BRINGING VISION<br>TO LIFE</h1>
         <div class="first_page__img">
-            <img src="img/furniture/loft2.jpg" alt="" srcset="">
+            <img src="img/furniture/loft2.jpg" alt="Image of home furniture">
         </div>
         <a href="#" class="first_page__section section section_lightgreen">
-            <h3 class="section__title text">explore our recent<br> projects</h3>
+            <h3 class="section__title text">explore our recent<br>projects</h3>
             <p class="section__text text">get to know our style on instagram</p>
             <div class="section__more"></div>
         </a>
-        <!-- <div class="first_page__section section section_lightgreen">
-            <h3 class="section__title text">explore our recent<br> projects</h3>
-            <p class="section__text text">get to know our style on instagram</p>
-            <div class="section__more"></div>
-        </div> -->
         <div class="first_page__section section section_violet">
             <h3 class="section__title text">900</h3>
             <p class="section__text text">satisfied clients</p>
@@ -60,8 +61,8 @@
         <div class="styles_page__section section section_grey">
             <h3 class="section__title text">modern</h3>
             <div class="section__hidden_img">
-                <img class="hidden_img" src="img/furniture/loft.jpg" alt="" srcset="">
-                <img class="hidden_img" src="img/furniture/loft2.jpg" alt="" srcset="">
+                <img class="hidden_img" src="img/furniture/loft.jpg" alt="Modern style interier">
+                <img class="hidden_img" src="img/furniture/loft2.jpg" alt="Modern style interier">
             </div>
             <p class="section__text text">embodies a sense of minimalism, balance, and harmony, creating spaces that feet sleek, contemporary and timeless</p>
             <div class="section__plus"></div>
@@ -70,7 +71,7 @@
         <div class="styles_page__section section section_grey expand">
             <h3 class="section__title text">industrial</h3>
             <div class="section__hidden_img">
-                <img class="hidden_img" src="img/furniture/loft2.jpg" alt="" srcset="">
+                <img class="hidden_img" src="img/furniture/loft2.jpg" alt="Industrial style interier">
             </div>
             <p class="section__text text">design incorporates raw, unfinished materials like exposed brick, metal, and rectaimed wood</p>
             <div class="section__plus"></div>
@@ -84,7 +85,7 @@
         <div class="styles_page__section section section_grey expand">
             <h3 class="section__title text">retro</h3>
             <div class="section__hidden_img">
-                <img class="hidden_img" src="img/furniture/loft.jpg" alt="" srcset="">
+                <img class="hidden_img" src="img/furniture/loft.jpg" alt="Retro style  interier">
             </div>
             <p class="section__text text">design incorporates furniture and accessories such as eames chairs, tulip tables and sunburst mirrors</p>
             <div class="section__plus"></div>
@@ -93,7 +94,7 @@
         <div class="styles_page__section section section_grey expand">
             <h3 class="section__title text">futuristic</h3>
             <div class="section__hidden_img">
-                <img class="hidden_img" src="img/furniture/loft2.jpg" alt="" srcset="">
+                <img class="hidden_img" src="img/furniture/loft2.jpg" alt="Futuristic style interier">
             </div>
             <p class="section__text text">style that draws inspiration from the concept of the future, incorporating innovative technologies</p>
             <div class="section__plus"></div>
@@ -103,23 +104,23 @@
     <section id="explore_page" class="explore_page__container container">
         <h2 class="explore_page__title page_title">EXPLORE OUR WORKS</h2>
         <div class="explore_page__img">
-            <img src="img/furniture/loft.jpg" alt="">
+            <img src="img/furniture/kitchen.jpg" alt="Example of design interier">
         </div>
-        <div class="explore_page__section section section_grey">
+        <div class="explore_page__section section section_grey section_column_spacebetween">
             <h3 class="section__title text">shared spaces</h3>
             <p class="section__text text">design involves creating a welcoming and functional space where individuals and families can relax, entertain guests, and engage in various activities</p>
         </div>
-        <div class="explore_page__section section section_lightgreen">
+        <div class="explore_page__section section section_lightgreen section_column_spacebetween">
             <h3 class="section__title text">kitchen & dinners</h3>
             <p class="section__text text">we are creating a functional and aesthetically pleasing space that facilitates efficient meal preparation, cooking, and socializing</p>
         </div>
         <div class="explore_page__img">
-            <img src="img/furniture/loft2.jpg" alt="">
+            <img src="img/furniture/loft.jpg" alt="Example of design interier">
         </div>
         <div class="explore_page__img">
-            <img src="img/furniture/loft.jpg" alt="">
+            <img src="img/furniture/bedroom.jpg" alt="Example of design interier">
         </div>
-        <div class="explore_page__section section section_violet">
+        <div class="explore_page__section section section_violet section_column_spacebetween">
             <h3 class="section__title text">bedrooms</h3>
             <p class="section__text text">design focuses on creating a comfortable, restful, and personalized space that reflects the individual's style and promotes relaxation</p>
         </div>
@@ -180,12 +181,12 @@
     </section>
     <section id="order_page" class="order_page__container container">
         <h2 class="order_page__title page_title">ORDER A PROJECT</h2>
-        <form action="" method="post" class="order_page__form section section_grey">
-            <input type="text" name="name" placeholder="name" id="" class="form__input text" required autocomplete="off">
+        <form method="post" class="order_page__form section section_grey">
+            <input type="text" name="name" placeholder="name" class="form__input text" required autocomplete="off">
             <p class="form__message text" hidden>Incorrect data</p>
-            <input type="tel" name="phone number" placeholder="phone number" id="" class="form__input text" required autocomplete="off">
+            <input type="tel" name="phone number" placeholder="phone number" class="form__input text" required autocomplete="off">
             <p class="form__message text" hidden>Incorrect data</p>
-            <select name="" id="" class="form__input form__select text" required>
+            <select class="form__input form__select text" required>
                 <option value="" disabled hidden selected class="select__option">work plan</option>
                 <option value="basic" class="select__option">basic</option>
                 <option value="opti" class="select__option">opti</option>
@@ -193,7 +194,7 @@
             </select>
             <input type="submit" value="book a consultation" class="form__button text button button_lightgreen">
         </form>
-        <div class="order_page__section section section_lightgreen">
+        <div class="order_page__section section section_lightgreen section_column_spacebetween">
             <h3 class="section__title text">contacts</h3>
             <address class="section__address text">
                 <a class="address__line mail" href="mailto:ambiencestudio@gmail.com">ambiencestudio@gmail.com</a>
@@ -208,15 +209,21 @@
         </a>
         <div class="order_page__section section section_grey">
             <ul class="section__ul text">
-                <a href="#"><li class="section__li facebook">facebook</li></a>
-                <a href="#"><li class="section__li instagram">instagram</li></a>
-                <a href="#"><li class="section__li youtube">youtube</li></a>
+                <li class="section__li facebook">
+                    <a href="#">facebook</a>
+                </li>
+                <li class="section__li instagram">
+                    <a href="#">instagram</a>
+                </li>
+                <li class="section__li youtube">
+                    <a href="#">youtube</a>
+                </li>
             </ul>
         </div>
     </section>
-</main>    
-</body>
+</main>
 <script src="js/imageExpand.js"></script>
 <script src="js/selectAutofill.js"></script>
-<script src="js/formSubmit.js"></script>
+<script src="js/formSubmit.js"></script>    
+</body>
 </html>
