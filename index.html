@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ambiance studio</title>
     <meta name="description" content="Ambiance studio develop design not only for your space, but for your life">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" sizes="32x32" href="img/favicon.ico">
+    <!-- Opera, Firefox: -->
     <link rel="icon" type="image/png" sizes="96x96" href="img/icon-96.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<header>
-    <div id="header" class="header__container">
-        <div class="header__logo title">AMBIANCE STUDIO</div>
-        <nav>
-            <ul id="menu" class="header__menu">
+<body id="page">
+<header id="menu" class="header">
+    <div class="header__container">
+        <a class="header__logo title" href="index.html">AMBIANCE STUDIO</a>
+        <nav class="header__nav">
+            <ul class="header__menu">
                 <li class="header__menu_item text">
                     <a href="#styles_page">styles</a>
                 </li>
@@ -32,7 +33,7 @@
         </nav>
         <div class="header__burger_container">
             <a href="#menu" class="header__burger"><div></div></a>
-            <a href="#header" class="header__burger_close"></a>
+            <a href="#page" class="header__burger_close"></a>
         </div>
     </div>
 </header>
@@ -42,7 +43,7 @@
         <div class="first_page__img">
             <img src="img/furniture/loft2.jpg" alt="Image of home furniture">
         </div>
-        <a href="#" class="first_page__section section section_lightgreen">
+        <a href="#explore_page" class="first_page__section section section_lightgreen">
             <h3 class="section__title text">explore our recent<br>projects</h3>
             <p class="section__text text">get to know our style on instagram</p>
             <div class="section__more"></div>
