@@ -356,8 +356,8 @@ body {
     -o-object-fit: cover;
     object-fit: cover;
 
-    -webkit-animation: imgAnimate ease-in-out .3s;
-    animation: imgAnimate ease-in-out .3s;
+    -webkit-animation: imgAnimate ease-in-out .6s;
+    animation: imgAnimate ease-in-out .6s;
 }
 
 @-webkit-keyframes imgAnimate {
@@ -391,11 +391,12 @@ body {
 }
 
 .styles_page__section  {
-    max-height: 250px;
+    max-height: 205px;
+    min-height: 205px;
 
-    -webkit-transition: max-height ease-in .5s;
-    -o-transition: max-height ease-in .5s;
-    transition: max-height ease-in .5s;
+    -webkit-transition: min-height ease-in .3s;
+    -o-transition: min-height ease-in .3s;
+    transition: min-height ease-in .3s;
 }
 
 .styles_page__title,
@@ -424,11 +425,11 @@ body {
 /* ------------ styles for showImg.js */
 
 .styles_page__section.active  {
-    max-height: 1500px;
+    min-height: 420px;
 
-    -webkit-transition: max-height ease-in-out .5s;
-    -o-transition: max-height ease-in-out .5s;
-    transition: max-height ease-in-out .5s;
+    -webkit-transition: min-height ease-in .3s;
+    -o-transition: min-height ease-in .3s;
+    transition: min-height ease-in .3s;
 }
 
 .styles_page__section:nth-child(3).span2,
@@ -540,6 +541,7 @@ body {
     content: '';
     position: absolute;
     display: block;
+    top: 3px;
     left: -40px;
     width: 16px;
     height: 16px;
@@ -551,6 +553,10 @@ body {
 
 .violet_checkbox .section__li::before {
     background: url('./img/16px/check-box-violet.png');
+}
+
+.semitransparent.section__li::before {
+    background: url('./img/16px/check-box.png');
 }
 
 .section_grey .section__li {
