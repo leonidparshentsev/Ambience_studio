@@ -1,16 +1,3 @@
-// Курсор в конце строки +
-// Удаление
-// Вставка
-// Запись
-// Удаление выделенного фрагмента
-// Перезапись выделенного фрагмента 
-
-// Курсор в середине строки
-// Удаление -
-// Вставка -
-// Запись -
-// Удаление выделенного фрагмента -
-// Перезапись выделенного фрагмента -
 
 const input = document.querySelector('[name="phone number"]');
 const mask = '+7 xxx xxx-xx-xx'
@@ -20,10 +7,9 @@ input.addEventListener('focus', (event) => {
 
     let inputLine = event.target.value;
     let lastIndex = event.target.value.length;
-    let maskLength = mask.length;
 
-    let selectionStart;
-    let selectionEnd;
+    let selectionStart = input.selectionStart;
+    let selectionEnd = input.selectionEnd;
     let selectionRange = 0;
 
     codeNumberAutoComplete();
@@ -32,15 +18,15 @@ input.addEventListener('focus', (event) => {
 
         codeNumberAutoComplete();
 
-        if(lastIndex > 0 && event.key === 'Backspace') {
+        if(lastIndex > 3 && event.key === 'Backspace') {
 
-            if (selectionRange <= 1) {
-                inputLine = inputLine.slice(0, -1);
-                lastIndex--;
-            } else {
-                deleteSelection();
+            if (selectionRange < 1 && selectionStart > 3) {
+                selectionEnd = selectionStart;
+                selectionStart -= 1;
+                selectionRange = selectionEnd - selectionStart;
             }
 
+            deleteSelection(selectionStart, selectionEnd);
             return;
         } 
 
@@ -48,67 +34,56 @@ input.addEventListener('focus', (event) => {
 
         if(matchDigit !== null) {
 
-            deleteSelection();
+            deleteSelection(selectionStart, selectionEnd);
 
             if(lastIndex > 15) {
                 event.preventDefault();
                 return;
             }
 
-            if(lastIndex === 6) {
-                inputLine += ' ';
-                lastIndex++;
-            } else if(lastIndex === 10 || lastIndex === 13) {
-                inputLine += '-';
-                lastIndex++; 
+            if(selectionStart > 3) {
+                inputLine = inputLine.slice(0, selectionStart) + event.key + inputLine.slice(selectionStart);
+            } else {
+                inputLine += event.key;
             }
 
-            inputLine += event.key;
-            lastIndex++;
+            selectionStart ++;
+            lastIndex++;   
         }
- 
     });
 
     input.addEventListener('keyup', (event) => {
+        inputLine = bringInputValueToMask(inputLine);
         updateTargetValue();
         updateSelectionStart();
     });
 
     input.addEventListener('paste', (event) => {
 
-        deleteSelection();
-
         let clipboardData = event.clipboardData.getData('text/plain');
         clipboardData = clipboardData.replace(/\D/g,'');
         if(clipboardData.length === 0) return;
-    
-        inputLine += clipboardData;
 
-        for( ; lastIndex < inputLine.length; lastIndex++) {
-
-            if(lastIndex === 6 
-            && inputLine[lastIndex] !== ' ') {
-
-                inputLine = inputLine.slice(0,lastIndex) + ' ' + inputLine.slice(lastIndex);
-                lastIndex ++;
-
-            } else if((lastIndex === 10 || lastIndex === 13) 
-            && inputLine[lastIndex] !== '-') {
-
-                inputLine = inputLine.slice(0,lastIndex) + '-' + inputLine.slice(lastIndex);
-                lastIndex ++; 
-            } 
+        if(selectionStart <= 3) {
+            deleteSelection(3, selectionEnd);    
+            inputLine = inputLine.slice(0, 3) + clipboardData + inputLine.slice(3);
+        } else {
+            deleteSelection(selectionStart, selectionEnd);
+            inputLine = inputLine.slice(0, selectionStart) + clipboardData + inputLine.slice(selectionStart);
         }
 
-        if (inputLine.length > 15) inputLine = inputLine.slice(0, 15 + 1);
-
+        inputLine = bringInputValueToMask(inputLine);
         updateTargetValue();       
 
     });
 
+    input.addEventListener('cut', (event) => {
+        deleteSelection(selectionStart, selectionEnd);
+    });
+
     input.addEventListener('select', (event) => {
         updateSelectionStart();
-        selectionEnd = input.selectionEnd;
+        updateSelectionEnd();
         selectionRange = Math.abs(selectionStart - selectionEnd);
     });
 
@@ -130,20 +105,48 @@ input.addEventListener('focus', (event) => {
     }
 
     function deleteSelection(start = 0, end = lastIndex) {
-        if(selectionRange > 1) {
-            end -= selectionRange;
 
-            inputLine = inputLine.slice(start, end);
-            lastIndex = inputLine.length; 
+        if(selectionRange >= 1) {
+            inputLine = inputLine.slice(0, start) + inputLine.slice(end).replace(/\D/g,'');
+            inputLine = bringInputValueToMask(inputLine);
+
+            lastIndex = start;
             selectionRange = 0;
-
+            
             codeNumberAutoComplete();
+        } 
+    }
+
+    function bringInputValueToMask(inputLine) {
+
+        inputLine = inputLine.slice(0,3) + inputLine.slice(3).replace(/\D/g,'');
+        for( lastIndex = 3; lastIndex < inputLine.length; lastIndex++) {
+
+            if(lastIndex === 6 
+            && inputLine[lastIndex] !== ' ') {
+
+                inputLine = inputLine.slice(0,lastIndex) + ' ' + inputLine.slice(lastIndex);
+                lastIndex ++;
+
+            } else if((lastIndex === 10 || lastIndex === 13) 
+            && inputLine[lastIndex] !== '-') {
+
+                inputLine = inputLine.slice(0,lastIndex) + '-' + inputLine.slice(lastIndex);
+                lastIndex ++; 
+            } 
         }
+
+        if (inputLine.length > 15) inputLine = inputLine.slice(0, 15 + 1);
+
+        return inputLine;
     }
 
     function updateSelectionStart() {
         selectionStart = input.selectionStart;
     }
 
+    function updateSelectionEnd() {
+        selectionEnd = input.selectionEnd;
+    }
 });
 
