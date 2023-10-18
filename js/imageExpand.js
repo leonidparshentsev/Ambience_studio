@@ -23,9 +23,9 @@ function stylePageClickHandler(e) {
 
         addClass(parentNode, 'active');
 
-        if(parentNode.classList.contains('expand')) {
-            addClass(parentNode, 'span2');
-        }
+        // if(parentNode.classList.contains('expand')) {
+        //     addClass(parentNode, 'span2');
+        // }
 
         closeButton.hidden = !closeButton.hidden;
         openButton.hidden = !openButton.hidden;
@@ -38,9 +38,9 @@ function stylePageClickHandler(e) {
 
         removeClass(parentNode, 'active');
 
-        if(parentNode.classList.contains('expand')) {
-            removeClass(parentNode, 'span2');
-        }
+        // if(parentNode.classList.contains('expand')) {
+        //     removeClass(parentNode, 'span2');
+        // }
     
         closeButton.hidden = !closeButton.hidden;
         openButton.hidden = !openButton.hidden;
