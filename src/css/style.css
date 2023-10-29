@@ -2,13 +2,13 @@
 
 @font-face {
     font-family: "Neutral face";
-    src: url("fonts/NeutralFace/NeutralFace.otf") format("opentype");
+    src: url("../../public/fonts/NeutralFace/NeutralFace.otf") format("opentype");
     font-weight: normal;
 }
 
 @font-face {
     font-family: "Neutral face bold";
-    src: url("fonts/NeutralFace/NeutralFace-Bold.otf") format("opentype");
+    src: url("../../public/fonts/NeutralFace/NeutralFace-Bold.otf") format("opentype");
     font-weight: bold;
 }
 
@@ -298,7 +298,7 @@ body {
     bottom: 32px;
     height: 48px;
     width: 48px;
-    background: url('./img/64px/bottom-right.png');
+    background: url('../../public/img/64px/bottom-right.png');
     background-size: cover;
 
     -webkit-transition: all ease-in-out 0.4s;
@@ -307,7 +307,7 @@ body {
 }
 
 .section_violet .section__more {
-    background: url('./img/64px/bottom-right-white.png');
+    background: url('../../public/img/64px/bottom-right-white.png');
     background-size: cover;
 }
 
@@ -333,7 +333,7 @@ body {
     top: 32px;
     height: 32px;
     width: 32px;
-    background: url('./img/64px/plus-lightgreen.png');
+    background: url('../../public/img/64px/plus-lightgreen.png');
     background-size: cover;
 }
 .section__minus {
@@ -342,7 +342,7 @@ body {
     top: 32px;
     height: 32px;
     width: 32px;
-    background: url('./img/64px/minus-lightgreen.png');
+    background: url('../../public/img/64px/minus-lightgreen.png');
     background-size: cover;
 }
 
@@ -651,15 +651,15 @@ body {
 }
 
 .lightgreen_checkbox .section__li::before {
-    background: url('./img/16px/check-box-lightgreen.png');
+    background: url('../../public/img/16px/check-box-lightgreen.png');
 }
 
 .violet_checkbox .section__li::before {
-    background: url('./img/16px/check-box-violet.png');
+    background: url('../../public/img/16px/check-box-violet.png');
 }
 
 .semitransparent.section__li::before {
-    background: url('./img/16px/check-box.png');
+    background: url('../../public/img/16px/check-box.png');
 }
 
 .section_grey .section__li {
@@ -735,7 +735,7 @@ body {
     position: relative;
     margin: 0 0 70px 0;
     color: var(--light-grey);
-    background-image: url('./img/32px/down-arrow-lightgray.png');
+    background-image: url('../../public/img/32px/down-arrow-lightgray.png');
     background-repeat: no-repeat;
     background-position: right 5px top 50%;
     background-size: 16px; 
@@ -784,13 +784,13 @@ body {
 }
 
 .mail::before {
-    background: url('./img/16px/envelope.png');
+    background: url('../../public/img/16px/envelope.png');
 }
 .telephone::before {
-    background: url('./img/16px/telephone.png');
+    background: url('../../public/img/16px/telephone.png');
 }
 .point::before {
-    background: url('./img/16px/maps-and-flags.png');
+    background: url('../../public/img/16px/maps-and-flags.png');
 }
 
 .order_page__section .section__li {
@@ -814,13 +814,13 @@ body {
 }
 
 .facebook::before {
-    background: url('./img/32px/facebook.png');
+    background: url('../../public/img/32px/facebook.png');
 }
 .instagram::before {
-    background: url('./img/32px/instagram.png');
+    background: url('../../public/img/32px/instagram.png');
 }
 .order_page__section .section__li.youtube::before {
-    background: url('./img/32px/youtube.png');
+    background: url('../../public/img/32px/youtube.png');
     background-size: contain;
     top: 4px;
 }
@@ -1000,7 +1000,7 @@ body {
 
     .header:target .header__burger_close {
         display: block;
-        background: url('./img/32px/down-arrow-lightgray.png');
+        background: url('../../public/img/32px/down-arrow-lightgray.png');
         background-size: contain;
     } 
 
